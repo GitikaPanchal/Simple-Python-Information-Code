@@ -1,0 +1,118 @@
+#MY FIRST PYTHON PROGRAM
+
+def password_access():
+    S_A = str(input("Setup A Password "))
+    while True:
+        answer = input("Enter Password ")
+        if answer == S_A:
+            print("Welcome")
+            break
+        else:
+            print("Incorrect Password")
+
+    
+   
+def display_person_info(name, age, height, gender, bgrp):
+    print(f"Name: {name}, age: {age}")
+    print("you will soon be", (age +1))
+    print(f"Height: {height} Ft")
+    print(f"Gender: {gender} ")
+    print(f"Blood Group: {bgrp} ")
+    
+    if age == 2 or age == 1:
+        print(f"{name} you are a toddler")
+    elif age <=10:
+        print(name + " you are a child")
+    elif age>=13 and age<18:
+        print(f"{name} you are a teenager")
+    elif age<18:
+        print(name + " you are a minor")
+    elif age == 35:
+        print(name + " you are in ur mid-age")
+    elif age>=60 and age<105:
+        print(name + " you are a senior citizen")
+    else:
+        print(name + " you are an adult")
+
+    
+    
+def ask_for_name():
+    name_answer = ""
+    while name_answer == "":
+            name_answer = input("Enter Name: ") 
+            
+            
+    return name_answer
+
+
+def ask_for_age(person_name):
+    age_int = 0
+    while age_int == 0: 
+        age_str = input(person_name + " Age: ")
+        try:
+            age_int = int(age_str)
+        except:
+            print("ERROR AGE MUST BE A NUMBER")
+    return age_int 
+
+
+def ask_for_height(person_name):
+    height_int = 0
+    while height_int == 0: 
+        height_int = input(person_name + " Height: ")
+    return height_int 
+
+
+def ask_for_gender(person_name):
+    gender_answer = ""
+    while gender_answer == "":
+            gender_answer = input(person_name + " Gender: ")
+    return gender_answer
+
+
+def ask_for_bgrp(person_name):
+    bgrp_answer = ""
+    while bgrp_answer == "":
+            bgrp_answer = input(person_name + " Blood Group: ")
+    return bgrp_answer
+
+
+password_access()
+
+
+def all_info():
+    
+    name = ask_for_name()
+    age = ask_for_age(name)
+    height = ask_for_height(name)
+    gender = ask_for_gender(name)
+    bgrp = ask_for_bgrp(name)
+    display_person_info(name, age, height, gender, bgrp)
+
+e_i1 = all_info()
+print()
+e_i2 = all_info()
+print()
+e_i3 = all_info()
+print()
+e_i4 = all_info()
+print()
+e_i5 = all_info()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
