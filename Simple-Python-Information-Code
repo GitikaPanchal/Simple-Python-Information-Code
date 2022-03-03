@@ -1,24 +1,37 @@
 #MY FIRST PYTHON PROGRAM
 
-def password_access():
+#allows user to input a custom password
+def password_access(): 
     S_A = str(input("Setup A Password "))
     while True:
-        answer = input("Enter Password ")
+        answer = input("Enter Password ") #enter the custom password
         if answer == S_A:
-            print("Welcome")
+            print("Welcome") #indicates access is granted 
             break
         else:
-            print("Incorrect Password")
+            print("Incorrect Password") #indicates access is denied
 
-    
-   
-def display_person_info(name, age, height, gender, bgrp):
+
+#allows user to make a budget for each family member
+def budget_setup():
+    IC = input("Enter Your Currency ")
+    MSB = int(input("Enter Monthly Budget "))
+    MS = int(input("Enter Spendings "))
+    TL = MSB - MS
+    print(f"You have {TL} {IC} left")
+    if MS>MSB:
+        print("you have exceeded ur spending limit")    
+
+
+#takes user data and inputs it
+def display_person_info(name, age, height, gender, bgrp,):
     print(f"Name: {name}, age: {age}")
-    print("you will soon be", (age +1))
+    print("you will soon be", (age +1)) #displays ur upcoming age
     print(f"Height: {height} Ft")
     print(f"Gender: {gender} ")
     print(f"Blood Group: {bgrp} ")
     
+    #defines specific age groups
     if age == 2 or age == 1:
         print(f"{name} you are a toddler")
     elif age <=10:
@@ -35,7 +48,7 @@ def display_person_info(name, age, height, gender, bgrp):
         print(name + " you are an adult")
 
     
-    
+#function for entering name  
 def ask_for_name():
     name_answer = ""
     while name_answer == "":
@@ -44,7 +57,7 @@ def ask_for_name():
             
     return name_answer
 
-
+#function for entering age 
 def ask_for_age(person_name):
     age_int = 0
     while age_int == 0: 
@@ -52,24 +65,24 @@ def ask_for_age(person_name):
         try:
             age_int = int(age_str)
         except:
-            print("ERROR AGE MUST BE A NUMBER")
+            print("ERROR AGE MUST BE A NUMBER") #error is given becuase age was entered incorrectly 
     return age_int 
 
-
+#function for entering height
 def ask_for_height(person_name):
     height_int = 0
     while height_int == 0: 
         height_int = input(person_name + " Height: ")
     return height_int 
 
-
+#function for entering gender
 def ask_for_gender(person_name):
     gender_answer = ""
     while gender_answer == "":
             gender_answer = input(person_name + " Gender: ")
     return gender_answer
 
-
+#function for entering blood group
 def ask_for_bgrp(person_name):
     bgrp_answer = ""
     while bgrp_answer == "":
@@ -80,8 +93,9 @@ def ask_for_bgrp(person_name):
 password_access()
 
 
+#displays all the code 
 def all_info():
-    
+    budget = budget_setup()
     name = ask_for_name()
     age = ask_for_age(name)
     height = ask_for_height(name)
@@ -89,15 +103,13 @@ def all_info():
     bgrp = ask_for_bgrp(name)
     display_person_info(name, age, height, gender, bgrp)
 
+
+#isplays all the code multiple times
 e_i1 = all_info()
 print()
 e_i2 = all_info()
 print()
 e_i3 = all_info()
-print()
-e_i4 = all_info()
-print()
-e_i5 = all_info()
 
 
 
